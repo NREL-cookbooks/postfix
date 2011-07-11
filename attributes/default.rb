@@ -15,3 +15,4 @@ default[:postfix][:smtp_sasl_passwd]    = ""
 
 default[:postfix][:discard_external] = false
 default[:postfix][:always_bcc] = nil
+default[:postfix][:allowed_addresses] = []

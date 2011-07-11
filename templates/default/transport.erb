@@ -12,6 +12,11 @@
 <%= node[:postfix][:always_bcc] %> :
 <% end %>
 
+# Allow mail to additional addresses.
+<% node[:postfix][:allowed_addresses].each do |address| %>
+<%= address %> :
+<% end %>
+
 # Discard all other mail.
 * discard:
 <% end %>
