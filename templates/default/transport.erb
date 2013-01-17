@@ -1,0 +1,22 @@
+####################################################################
+##### GENEARTED BY CHEF. LOCAL MODIFICATIONS WILL BE REPLACED. #####
+####################################################################
+
+<% if node[:postfix][:discard_external] %>
+# Allow local user mail to be sent.
+<%= node[:fqdn] %> :
+.<%= node[:fqdn] %> :
+
+<% if node[:postfix][:always_bcc] %>
+# Allow mail to the always_bcc address to be sent.
+<%= node[:postfix][:always_bcc] %> :
+<% end %>
+
+# Allow mail to additional addresses.
+<% node[:postfix][:allowed_addresses].each do |address| %>
+<%= address %> :
+<% end %>
+
+# Discard all other mail.
+* discard:
+<% end %>

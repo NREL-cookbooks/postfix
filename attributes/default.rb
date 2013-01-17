@@ -49,3 +49,7 @@ default['postfix']['canonical_classes'] = nil
 default['postfix']['sender_canonical_maps'] = nil
 default['postfix']['recipient_canonical_maps'] = nil
 default['postfix']['canonical_maps'] = nil
+
+default[:postfix][:discard_external] = false
+default[:postfix][:always_bcc] = nil
+default[:postfix][:allowed_addresses] = []

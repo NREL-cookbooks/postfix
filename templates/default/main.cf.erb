@@ -66,3 +66,7 @@ recipient_canonical_maps = <%= node['postfix']['recipient_canonical_maps'] %>
 <% unless node['postfix']['canonical_maps'].nil? -%>
 canonical_maps = <%= node['postfix']['canonical_maps'] %>
 <% end -%>
+
+<% if node[:postfix][:always_bcc] %>
+always_bcc = <%= node[:postfix][:always_bcc] %>
+<% end %>
