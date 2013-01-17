@@ -1,3 +1,5 @@
+require_recipe "postfix"
+
 execute "rebuild-transport" do
   command "postmap /etc/postfix/transport"
   action :nothing
