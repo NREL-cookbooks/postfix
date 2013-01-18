@@ -67,6 +67,8 @@ recipient_canonical_maps = <%= node['postfix']['recipient_canonical_maps'] %>
 canonical_maps = <%= node['postfix']['canonical_maps'] %>
 <% end -%>
 
+transport_maps = hash:/etc/postfix/transport
+
 <% if node[:postfix][:always_bcc] %>
 always_bcc = <%= node[:postfix][:always_bcc] %>
 <% end %>
