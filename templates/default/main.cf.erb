@@ -69,6 +69,8 @@ canonical_maps = <%= node['postfix']['canonical_maps'] %>
 
 transport_maps = hash:/etc/postfix/transport
 
+body_checks = regexp:/etc/postfix/body_checks
+
 <% if node[:postfix][:always_bcc] %>
 always_bcc = <%= node[:postfix][:always_bcc] %>
 <% end %>

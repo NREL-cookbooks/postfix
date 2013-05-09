@@ -62,6 +62,14 @@ template "/etc/postfix/transport" do
   notifies :run, "execute[rebuild-transport]"
 end
 
+template "/etc/postfix/body_checks" do
+  source "body_checks.erb"
+  owner "root"
+  group "root"
+  mode "0644"
+  notifies :restart, "service[postfix]"
+end
+
 %w{main master}.each do |cfg|
 
   template "/etc/postfix/#{cfg}.cf" do

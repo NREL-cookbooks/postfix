@@ -53,3 +53,4 @@ default['postfix']['canonical_maps'] = nil
 default[:postfix][:discard_external] = false
 default[:postfix][:always_bcc] = nil
 default[:postfix][:allowed_addresses] = []
+default[:postfix][:body_checks] = []
